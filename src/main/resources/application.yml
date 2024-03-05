@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/restaraunt_app-db-1
+    username: postgres
+    password: password
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+  default-produces-media-type: application/json
+
+orders:
+  oneTimeMax: 3
