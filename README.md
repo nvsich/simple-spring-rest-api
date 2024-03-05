@@ -60,19 +60,19 @@
 
 ### Users
 
-- _GET_  ``api/users/me``  
+- _GET_  ``/api/users/me``  
 Просмотр информации о себе
 
-- _GET_ ``api/users``  
+- _GET_ ``/api/users``  
 Просмотр информации о всех пользователях. Доступ только у админов 
 
-- _GET_ ``api/users/{id}``  
+- _GET_ ``/api/users/{id}``  
 Просмотр информации о пользователе по id. Доступ только у админов
 
-- _DELETE_ ``api/users/{id}``  
+- _DELETE_ ``/api/users/{id}``  
 Удаление пользователя по id. Доступ только у админов
 
-- _POST_ ``api/users``  
+- _POST_ ``/api/users``  
 Добавление нового пользователя. Для получения прав админа необходимо указать ROLE_ADMIN
 ```json
 {
@@ -85,9 +85,9 @@
 
 ### Menu
 
-- _GET_ ``api/menu``  
+- _GET_ ``/api/menu``  
 Просмотр всего списка блюд.
-- _POST_ ``api/menu``  
+- _POST_ ``/api/menu``  
 Добавление блюда в меню. Доступ только у админов
 ```json 
 {
@@ -97,7 +97,7 @@
   "amount": 5
 }
 ```
-- _PUT_ ``api/menu/{id}``  
+- _PUT_ ``/api/menu/{id}``  
 Изменение блюда по id. Все поля опциональны. Доступ только у админов
 ```json
 {
@@ -108,18 +108,18 @@
 }
 ```
 
-- _DELETE_ ``api/menu/{id}``  
+- _DELETE_ ``/api/menu/{id}``  
 Удаление блюда по id. Доступ только у админов
 
 ### Order
 
-- _GET_ ``api/orders/all-orders``  
+- _GET_ ``/api/orders/all-orders``  
 Просмотр всех заказов. Доступ только у админов
 
-- _GET_ ``api/orders``  
+- _GET_ ``/api/orders``  
 Просмотр своих заказов
 
-- _POST_ ``api/orders``  
+- _POST_ ``/api/orders``  
 Добавление нового заказа. Необходимо указать id блюд в списке
 ```json
 {
@@ -127,10 +127,10 @@
 }
 ```
 
-- _DELETE_ ``api/orders/{id}``  
+- _DELETE_ ``/api/orders/{id}``  
 Удаление заказа по id. Можно удалить только свой заказ, который имеет статус RECEIVED
 
-- _PUT_ ``api/orders/{id}``  
+- _PUT_ ``/api/orders/{id}``  
 Изменение заказа по id. Можно изменить только свой заказ
 ```json
 {
@@ -138,16 +138,16 @@
 }
 ```
 
-- _POST_ ``api/orders/pay/{id}``  
+- _POST_ ``/api/orders/pay/{id}``  
 Оплата заказа по id. Можно оплатить только свой заказ, имеющий статус READY
 
 
 ### Review
 
-- _GET_ ``api/reviews/{menuId}``  
+- _GET_ ``/api/reviews/{menuId}``  
 Получить отзывы блюда по его id
 
-- _POST_ ``api/reviews``  
+- _POST_ ``/api/reviews``  
 Оставить отзыв на блюдо. Можно оставить отзыв только на блюдо, которые было хотя бы в одном из собственных заказов и имеет статус PAID
 ```json
 {
@@ -159,9 +159,9 @@
 
 ### Stats
 
-- _GET_ ``api/stats/revenue``  
+- _GET_ ``/api/stats/revenue``  
 Получить полную выручку. Считается только по заказам со статусом PAID. Доступ только у админов
 
-- _GET_ ``api/stats/rating/{id}``  
+- _GET_ ``/api/stats/rating/{id}``  
 Получить среднюю оценку блюда по id. Доступ только у админов
 
